@@ -1,8 +1,7 @@
 package com.exaltpawarikanda.mssbrewery.controller;
 
-import com.exaltpawarikanda.mssbrewery.service.api.BeerService;
 import com.exaltpawarikanda.mssbrewery.model.BeerDto;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.exaltpawarikanda.mssbrewery.service.api.BeerService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +12,7 @@ import java.util.UUID;
 /**
  * Created by Exalt Pawarikanda on 7/25/21
  */
+@Deprecated
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {
