@@ -20,4 +20,6 @@ public class BeerDtoV2 {
     private String beerName;
     private BeerStyle beerStyle;
     private Long upc;
+
+
 }

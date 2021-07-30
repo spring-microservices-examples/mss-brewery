@@ -1,11 +1,11 @@
 package com.exaltpawarikanda.mssbrewery.domain;
 
-import com.exaltpawarikanda.mssbrewery.enums.BeerStyle;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 /**
@@ -18,6 +18,10 @@ import java.util.UUID;
 public class Beer {
     private UUID id;
     private String beerName;
-    private BeerStyle beerStyle;
+    private String beerStyle;
     private Long upc;
+
+   // protected LocalDate dateOfBirth;
+    protected Timestamp createdDate;
+    protected Timestamp lastUpdatedDate;
 }
