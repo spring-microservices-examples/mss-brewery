@@ -2,6 +2,8 @@ package com.exaltpawarikanda.mssbrewery.controller;
 
 import com.exaltpawarikanda.mssbrewery.model.BeerDto;
 import com.exaltpawarikanda.mssbrewery.service.api.BeerService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,16 +15,13 @@ import java.util.UUID;
 /**
  * Created by Exalt Pawarikanda on 7/25/21
  */
-@Deprecated
-@RequestMapping("/api/v1/beer")
+@RequiredArgsConstructor
+@Slf4j
 @RestController
+@RequestMapping("/api/v1/beer")
 public class BeerController {
 
     private final BeerService beerService;
-
-    public BeerController(BeerService beerService) {
-        this.beerService = beerService;
-    }
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId){

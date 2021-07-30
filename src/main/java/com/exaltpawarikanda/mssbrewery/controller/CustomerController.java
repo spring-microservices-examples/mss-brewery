@@ -2,6 +2,7 @@ package com.exaltpawarikanda.mssbrewery.controller;
 
 import com.exaltpawarikanda.mssbrewery.model.CustomerDto;
 import com.exaltpawarikanda.mssbrewery.service.api.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,15 +13,12 @@ import java.util.UUID;
 /**
  * Created by Exalt Pawarikanda on 7/25/21
  */
-@RequestMapping("/api/v1/customers")
+@RequiredArgsConstructor
 @RestController
+@RequestMapping("/api/v1/customers")
 public class CustomerController {
 
     private final CustomerService customerService;
-
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
 
     @GetMapping("/{customerId}")
     public ResponseEntity<CustomerDto> getCustomerById(@PathVariable("customerId")UUID customerId){
